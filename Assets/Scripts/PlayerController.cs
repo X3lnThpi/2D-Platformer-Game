@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
 
     public ScoreController scoreController;
     public LifeCounter lf;
+    public GameOverController gameOverController;
 
 
     void resizeBoxColliderSize()
@@ -29,16 +30,14 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("Player killed by enemy");
         lf.LoseLife();
+        gameOverController.PlayerDied();
        // Animator.SetBool("Dead", true);
        // Invoke("ReloadGame", 3f);
        // Destroy(gameObject);
        // throw new NotImplementedException();
     }
 
-    private void ReloadGame()
-    {
-        SceneManager.LoadScene("S2");
-    }
+   
 
     public void pickUpkey()
     {

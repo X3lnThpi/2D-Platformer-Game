@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class LifeCounter : MonoBehaviour
 {
     public Image[] lives;
-    public int livesRemaining;
+    public int livesRemaining = 3;
     PlayerController pl;
 
     public void LoseLife()
@@ -14,15 +14,24 @@ public class LifeCounter : MonoBehaviour
         //Decrease the value of livesRemaing
         livesRemaining--;
         //Hide one of the heart image
-        lives[livesRemaining].enabled = false;
+        if(livesRemaining >= 0)
+        {
+            lives[livesRemaining].enabled = false;
+        }
+        
         //If we run out of life. we Lose the game
         if(livesRemaining == 0)
         {
             Debug.Log("Die Die You Player");
              pl.Animator.SetBool("Dead", true);
-             pl.Invoke("ReloadGame", 3f);
+            // pl.Invoke("ReloadGame", 3f);
             // Destroy(gameObject);
             // throw new NotImplementedException();
+        }
+
+        if (livesRemaining < 0)
+        {
+            Debug.Log("Less than 0");
         }
     }
 
