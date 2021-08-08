@@ -8,13 +8,14 @@ namespace Assets.Scripts.Levels
         private static LevelManager instance;
         public static LevelManager Instance { get { return instance;  } }
 
+        public string Level1;
 
         private void Awake()
         {
             if(instance == null)
             {
                 instance = this;
-                DontDestroyOnLoad(gameObject);
+                DontDestroyOnLoad(this.gameObject);
             }
 
             else
@@ -33,5 +34,14 @@ namespace Assets.Scripts.Levels
         {
             PlayerPrefs.SetInt(level, (int)levelStatus);
         }
+
+        private void Start()
+        {
+            if (GetLevelStatus("Level1") == LevelStatus.Locked)
+            {
+                SetLevelStatus(Level1, LevelStatus.Unlocked);
+            }
+        }
+
     }
 }

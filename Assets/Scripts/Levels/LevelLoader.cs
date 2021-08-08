@@ -36,7 +36,7 @@ namespace Assets.Scripts.Levels
                     SceneManager.LoadScene(LevelName);
                     break;
             }
-            SceneManager.LoadScene(LevelName);
+            //SceneManager.LoadScene(LevelName);
             //throw new NotImplementedException();
         }
     }
