@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts.Levels
 {
@@ -9,6 +11,7 @@ namespace Assets.Scripts.Levels
         public static LevelManager Instance { get { return instance;  } }
 
         public string Level1;
+        public string[] Levels;
 
         private void Awake()
         {
@@ -37,9 +40,32 @@ namespace Assets.Scripts.Levels
 
         private void Start()
         {
-            if (GetLevelStatus("Level1") == LevelStatus.Locked)
+            if (GetLevelStatus("Levels[0]") == LevelStatus.Locked)
             {
-                SetLevelStatus(Level1, LevelStatus.Unlocked);
+                SetLevelStatus(Levels[0], LevelStatus.Unlocked);
+            }
+        }
+
+        public void MarkCurrentLevelComplete()
+        {
+            Scene CurrentScene = SceneManager.GetActiveScene();
+
+            // Set level status to complete
+            SetLevelStatus(CurrentScene.name, LevelStatus.Completed);
+
+            // unlock the next level
+
+            //int nextSceneIndex = (CurrentScene.buildIndex) + 1;
+            //Scene nextScene = SceneManager.GetSceneByBuildIndex(nextSceneIndex);
+            //Debug.Log("Next scene is valid" + nextScene.IsValid()); 
+            //LevelManager.Instance.SetLevelStatus(nextScene.name, LevelStatus.Unlocked);
+
+            //Working unlock next level code
+            int CurrentSceneIndex = Array.FindIndex(Levels, Levels => Levels == CurrentScene.name);
+            int nextSceneIndex = CurrentSceneIndex + 1;
+            if (nextSceneIndex < (Levels.Length))
+                {
+                SetLevelStatus(Levels[nextSceneIndex], LevelStatus.Unlocked);
             }
         }
 
