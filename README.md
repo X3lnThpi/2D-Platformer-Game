@@ -1,12 +1,15 @@
 # 2D-Platformer-Game
-I have designed a Unity 2D side-scrolling game, which typically involves moving the player character from left to right while avoiding obstacles and defeating enemies. The player character has different animation states for movements, which can make the game feel more immersive and engaging.
-
-To create the levels, I have utilized the Unity TileMaps tool, which allows me to quickly and easily create 2D maps using a set of predefined tiles. This allows me to design and create complex game levels with less effort and time, providing a more streamlined game development experience.
-
-In this game, the player will likely face a series of obstacles, such as pits, spikes, and enemies that must be avoided or defeated. The levels may become progressively more difficult as the game progresses, requiring the player to utilize a range of skills and abilities to overcome the challenges.
-
-Overall, a side-scrolling game with different animation states and tile-based levels can provide an engaging and immersive gaming experience for players, as they navigate through the game's levels and overcome the various obstacles and enemies along the way.
-
-
+![scr](https://user-images.githubusercontent.com/12250862/222147985-10cdbe93-735e-46c9-803f-4dd024d137c5.jpg)
+- Designed a Unity 2D side-scrolling game.
+- Involves moving the player character from left to right while avoiding obstacles and defeating enemies.
+- Player character has different animation states for movements.
+- Creates levels using Unity TileMaps tool.
+- Allows creating complex game levels with less effort and time.
+- Provides a streamlined game development experience.
+- Obstacles such as pits, spikes, and enemies must be avoided or defeated.
+- Levels may become progressively more difficult.
+- Requires utilizing a range of skills and abilities to overcome challenges.
+- Side-scrolling game with different animation states and tile-based levels provides an engaging and immersive gaming experience for players.
+- Navigating through the game's levels and overcoming obstacles and enemies provides an enjoyable gameplay experience.
 
 
